@@ -67,16 +67,16 @@ npm start
 
 ## Home Page
 
-![Home Page](assets/screenshots/WelcomePage.png)
+![Home Page](src/assets/screenshots/WelcomePage.png)
 
 ## Login Page
 
-![Login Page](assets/screenshots/LoginPage.png)
+![Login Page](src/assets/screenshots/LoginPage.png)
 
 ## Signup Page
 
-![Sign Up Page](assets/screenshots/SignupPage.png)
+![Sign Up Page](src/assets/screenshots/SignupPage.png)
 
 ## Dashboard
 
-![Dashboard](assets/screenshots/DashboardPage.png)
+![Dashboard](src/assets/screenshots/DashboardPage.png)
