@@ -63,7 +63,7 @@ npm install
 
 Create supabase project, add URL and anon key to .env
 
-npm start
+npm run dev
 
 # Screenshots
 
