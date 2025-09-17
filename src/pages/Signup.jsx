@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import supabase from '../helper/supabaseClient'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Signup() {
     useEffect(() => {
         document.title = "Sign Up"
-      }, [])
+    }, [])
 
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    // will allow user to optionally display password
+    const [showPassword, setShowPassword] = useState(false);
     // in case of error signing up, can explain issue to user
     const [message, setMessage] = useState("");
 
@@ -27,7 +30,7 @@ function Signup() {
             setMessage(error.message);
             return;
         } else {
-            setMessage("User account created successfully!");
+            navigate("/login", { state: { signupMessage: "User account created successfully! Please log in using your credentials." } });
         }
 
         // reset to empty input boxes after account creation
@@ -45,21 +48,24 @@ function Signup() {
             
             <form onSubmit={ handleSubmit } >
                 <input 
-                // keep variable updated to changes and bind new value
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                type="email" 
-                placeholder="Email" 
-                required
+                    // keep variable updated to changes and bind new value
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    type="email" 
+                    placeholder="Email" 
+                    required
                 />
-                <input
-                onChange={(e) => setPassword(e.target.value)}
-                value={password} 
-                type="password" 
-                placeholder="Password" 
-                required
+                <input 
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password} 
+                    type={showPassword ? "text" : "password"} // type toggles 
+                    placeholder="Password" 
+                    required
+                    style={showPassword ? { color: "grey" } : { color : "black" } }
                 />
-                <br/>
+                <span className="pw-indicator" onClick={() => setShowPassword(!showPassword)}  >
+                    {showPassword ? "Hide Password" : "Show Password"}
+                </span>
                 <button type="submit">Create Account</button>
             </form>
 

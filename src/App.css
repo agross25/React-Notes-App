@@ -151,9 +151,21 @@ span {
 
 /* Keep unordered lists small font */
 ul {
-    font-size: clamp(20px, 2vw, 24px);
+  font-size: clamp(20px, 2vw, 24px);
 }
 
 hr {
   margin: 20px 0;
+}
+
+/* Password Show/Reveal Message */
+.pw-indicator {
+  font-size: 16px;
+  font-family: "Cabin", sans-serif;
+  color: rgb(81, 81, 208);
+  text-shadow: none;
+  font-weight: 600;
+}
+.pw-indicator:hover {
+  text-decoration: underline;
 }

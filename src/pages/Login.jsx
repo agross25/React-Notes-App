@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import supabase from '../helper/supabaseClient'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 function Login() {
     useEffect(() => {
@@ -8,10 +8,14 @@ function Login() {
       }, [])
 
     const navigate = useNavigate();
+    const location = useLocation();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    // will allow user to optionally display password
+    const [showPassword, setShowPassword] = useState(false);
     // in case of error logging in, can explain issue to user
     const [message, setMessage] = useState("");
+    const signupMessage = location.state?.signupMessage;
 
     const handleSubmit = async (event) => {
         event.preventDefault(); // prevents automatic refresh
@@ -43,24 +47,28 @@ function Login() {
             <hr/>
             {/* Displays message if there is a message */}
             {message && <span>{message}</span>}
+            {signupMessage && <span>{signupMessage}</span>}
             
             <form onSubmit={ handleSubmit } >
                 <input 
-                // keep variable updated to changes and bind new value
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                type="email" 
-                placeholder="Email" 
-                required
+                    // keep variable updated to changes and bind new value
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    type="email" 
+                    placeholder="Email" 
+                    required
                 />
                 <input
-                onChange={(e) => setPassword(e.target.value)}
-                value={password} 
-                type="password" 
-                placeholder="Password" 
-                required
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password} 
+                    type={showPassword ? "text" : "password"} // type toggles 
+                    placeholder="Password" 
+                    required
+                    style={showPassword ? { color: "grey" } : { color: "black" }}
                 />
-                <br/>
+                <span className="pw-indicator" onClick={() => setShowPassword(!showPassword)}  >
+                    {showPassword ? "Hide Password" : "Show Password"}
+                </span>
                 <button type="submit">Log In</button>
             </form>
 
