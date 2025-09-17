@@ -165,6 +165,8 @@ hr {
   color: rgb(81, 81, 208);
   text-shadow: none;
   font-weight: 600;
+  margin: 5px;
+  cursor: pointer;
 }
 .pw-indicator:hover {
   text-decoration: underline;

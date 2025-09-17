@@ -41,8 +41,8 @@ Other Tools: Google Fonts, Google Creative Commons Images
 
 # Future Improvements
 
-- Ask user to confirm password
-- Show admin who sent what note
+- Popup to Confirm Logout
+- Show admin which user sent each note
 
 # Running this Project
 
@@ -69,11 +69,12 @@ npm start
 
 ## Login Page
 
-![Login Page](src/assets/screenshots/LoginPage.png)
+![Login Page](src/assets/screenshots/LoginImage.png)
 
 ## Signup Page
 
-![Sign Up Page](src/assets/screenshots/SignupPage.png)
+![Sign Up Page](src/assets/screenshots/SignupImage.png)
+![Passwords Do Not Match](src/assets/screenshots/PW.png)
 
 ## Dashboard
 
