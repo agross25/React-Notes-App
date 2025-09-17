@@ -12,6 +12,8 @@ function Signup() {
     const [password, setPassword] = useState("");
     // will allow user to optionally display password
     const [showPassword, setShowPassword] = useState(false);
+    // will force user to confirm password before account creation
+    const [confirmPassword, setConfirmPassword] = useState("");
     // in case of error signing up, can explain issue to user
     const [message, setMessage] = useState("");
 
@@ -19,7 +21,17 @@ function Signup() {
         event.preventDefault(); // prevents automatic refresh
         setMessage(""); // empty any previous message
 
-        // returns either data or error
+        // check if passwords match
+        if (password !== confirmPassword) {
+            setMessage("Passwords do not match!");
+            // reset to empty input boxes after account creation
+            setEmail("");
+            setPassword("");
+            setConfirmPassword("");
+            return;
+        }
+
+        // calls supabase to create user, returns either data or error
         const { data, error } = await supabase.auth.signUp({
             email: email,
             password: password,
@@ -36,6 +48,7 @@ function Signup() {
         // reset to empty input boxes after account creation
         setEmail("");
         setPassword("");
+        setConfirmPassword("");
     }
 
     return (
@@ -60,6 +73,14 @@ function Signup() {
                     value={password} 
                     type={showPassword ? "text" : "password"} // type toggles 
                     placeholder="Password" 
+                    required
+                    style={showPassword ? { color: "grey" } : { color : "black" } }
+                />
+                <input 
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    value={confirmPassword} 
+                    type={showPassword ? "text" : "password"} // type toggles 
+                    placeholder="Confirm Password" 
                     required
                     style={showPassword ? { color: "grey" } : { color : "black" } }
                 />
