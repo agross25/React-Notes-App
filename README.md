@@ -67,7 +67,7 @@ npm start
 
 ## Home Page
 
-![Home Page](src/assets/screenshots/WelcomePage.png)
+![Home Page](src/assets/screenshots/HomePage.png)
 
 ## Login Page
 
