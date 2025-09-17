@@ -1,0 +1,159 @@
+/* App.css */
+
+/* Full page layout */
+body {
+  margin: 0;
+  min-height: 100vh;
+  height: 100%;
+  overflow-y: auto;
+  
+  /* Base font size adjusts with screen width */
+  font-size: clamp(24px, 2vw, 36px);
+  
+  /* Background image */
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    url('./assets/notes_on_desk.JPEG') center/cover no-repeat;
+  background-size: cover;       /* cover entire screen */
+  background-position: center;  /* center image */
+  background-repeat: no-repeat; /* don’t tile */
+  color: #fff; /* default text color */
+  display: flex;
+  flex-direction: column;       /* stack elements vertically */
+  justify-content: center;      /* vertical centering */
+  align-items: flex-start;      /* left-align the text */
+  min-height: 100vh;            /* full viewport height */
+  padding-left: 40px;           /* optional left padding */
+  padding-right: 40px;
+}
+
+/* Generic container */
+.container {
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 100px 40px 40px 40px;
+  text-align: left;
+  
+}
+
+/* Headings */
+h1, h2 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;        
+  font-style: normal;
+  margin-top: 0;    
+  margin-bottom: 5px; 
+  line-height: 1.1; 
+  text-align: left;
+  color: #602e2e;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+h1 {
+  font-size: clamp(80px, 6vw, 120px);
+  font-weight: 800;
+}
+h2 {
+  font-size: clamp(50px, 4vw, 80px);
+  font-weight: 700;
+}
+
+/* Paragraphs */
+p {
+  font-size: clamp(24px, 2.5vw, 34px);
+  margin: 10px 0;
+}
+
+/* Links */
+a {
+  font-family: "Cabin", sans-serif;
+  font-size: clamp(18px, 2.5vw, 36px);
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  color: #754333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #754333;
+  background-color: rgba(212, 153, 142, 0.74);
+}
+
+/* Buttons */
+button {
+  font-family: "Cabin", sans-serif;
+  font-size: clamp(18px, 2.5vw, 26px); /* global responsive size */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  color: #754333;
+  background: rgb(212, 152, 142);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+button:hover {
+  color: #754333;
+  background-color: rgba(182, 127, 117);
+}
+button:active {
+  background: rgb(182, 127, 117);
+}
+
+/* Generic text settings */
+body, p, span, div, textarea {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Inputs */
+input {
+  width: 60%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 15px;
+  font-family: inherit;
+  resize: vertical;
+  font-size: clamp(12px, 2.5vw, 30px);
+}
+
+/* Textarea */
+textarea {
+  width: 60%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 15px;
+  font-family: inherit;
+  resize: vertical;
+  font-size: 20px;
+}
+
+/* Messages */
+span {
+  display: block;
+  margin: 15px 0;
+  font-weight: 500;
+  font-size: clamp(24px, 2vw, 44px);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Keep unordered lists small font */
+ul {
+    font-size: clamp(20px, 2vw, 24px);
+}
+
+hr {
+  margin: 20px 0;
+}
