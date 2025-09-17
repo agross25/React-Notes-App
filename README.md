@@ -41,9 +41,7 @@ Other Tools: Google Fonts, Google Creative Commons Images
 
 # Future Improvements
 
-- Redirect user to login page after user account is created
 - Ask user to confirm password
-- Enable password viewing
 - Show admin who sent what note
 
 # Running this Project
