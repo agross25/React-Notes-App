@@ -32,6 +32,10 @@ This web app was designed to allow users to create and sign into personal accoun
 - Dynamically resizes according to screen size
 - Different aesthetic fonts and styles
 - Opaque background image for increased quality
+- Option to display or hide password during signup and login
+- Password confirmation necessary to create account
+- Can logout from dashboard
+- Account creation directs user to login page with instructions
 
 # Tech Stack
 
